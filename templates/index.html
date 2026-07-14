@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Default Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="card">
+    <h1>Loan Default Prediction</h1>
+    <p class="subtitle">Predict loan default risk using machine learning</p>
+
+    <form id="predictForm">
+
+        <h3>Personal & Financial Details</h3>
+        <div class="grid">
+            <input type="number" name="Age" placeholder="Age" required>
+            <input type="number" name="Income" placeholder="Income" required>
+            <input type="number" name="CreditScore" placeholder="Credit Score" required>
+            <input type="number" name="MonthsEmployed" placeholder="Months Employed" required>
+        </div>
+
+        <h3>Loan Details</h3>
+        <div class="grid">
+            <input type="number" name="LoanAmount" placeholder="Loan Amount" required>
+            <input type="number" step="0.01" name="InterestRate" placeholder="Interest Rate" required>
+            <input type="number" name="LoanTerm" placeholder="Loan Term (months)" required>
+            <input type="number" step="0.01" name="DTIRatio" placeholder="DTI Ratio" required>
+        </div>
+
+        <h3>Background Information</h3>
+        <div class="grid">
+            <input type="number" name="NumCreditLines" placeholder="Credit Lines" required>
+
+            <select name="Education" required>
+                <option value="">Education</option>
+                <option value="high school">High School</option>
+                <option value="bachelor's">Bachelor's</option>
+                <option value="master's">Master's</option>
+            </select>
+
+            <select name="EmploymentType" required>
+                <option value="">Employment Type</option>
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+                <option value="self-employed">Self-employed</option>
+                <option value="unemployed">Unemployed</option>
+            </select>
+
+            <select name="MaritalStatus" required>
+                <option value="">Marital Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+            </select>
+
+            <select name="LoanPurpose" required>
+                <option value="">Loan Purpose</option>
+                <option value="auto">Auto</option>
+                <option value="business">Business</option>
+                <option value="education">Education</option>
+                <option value="home">Home</option>
+                <option value="other">Other</option>
+            </select>
+
+            <select name="HasMortgage" required>
+                <option value="">Has Mortgage?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <select name="HasDependents" required>
+                <option value="">Has Dependents?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <select name="HasCoSigner" required>
+                <option value="">Has Co-Signer?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Default Risk</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"> </script>
+    
+</body>
+</html>
